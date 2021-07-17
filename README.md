@@ -30,13 +30,13 @@ npm run testrpc
 - Start dojima side chain. Requires docker.
 
 ```
-npm run bor:simulate
+npm run bulldog:simulate
 ```
 
 - If you ran a bulldog instance before, a dead docker container might still be lying around, clean it with
 
 ```
-npm run bor:clean
+npm run bulldog:clean
 ```
 
 - Run a bor (our dojima chain node) instance.
