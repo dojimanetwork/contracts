@@ -6,8 +6,8 @@ async function deploy() {
   if (!process.env.HEIMDALL_ID) {
     throw new Error('Please export HEIMDALL_ID environment variable')
   }
-  if (!process.env.MATIC_NAME) {
-    throw new Error('Please export MATIC_NAME environment variable')
+  if (!process.env.DOJIMA_NAME) {
+    throw new Error('Please export DOJIMA_NAME environment variable')
   }
 
   const qClient = await EthDeployer.getQueue()
@@ -37,12 +37,12 @@ async function deploy() {
 
   await deployer.deploy(transformArtifact('ValidatorShareFactory'))
   await deployer.deploy(transformArtifact('StakingInfo', ['Registry']))
-  await deployer.deploy(transformArtifact('StakingNFT', [{ value: 'Matic Validator' }, { value: 'MV' }]))
+  await deployer.deploy(transformArtifact('StakingNFT', [{ value: 'Dojima Validator' }, { value: 'DV' }]))
 
-  await deployer.deploy(transformArtifact('TestToken', [{ value: process.env.MATIC_NAME }, { value: process.env.MATIC_NAME }]))
-  await deployer.deploy(transformArtifact('TestToken', [{ value: `ERC20-${process.env.MATIC_NAME}` }, { value: `ERC20-${process.env.MATIC_NAME}` }]))
-  await deployer.deploy(transformArtifact('RootERC721', [{ value: `ERC721-${process.env.MATIC_NAME}` }, { value: `ERC721-${process.env.MATIC_NAME}` }]))
-  await deployer.deploy(transformArtifact('MaticWETH'))
+  await deployer.deploy(transformArtifact('TestToken', [{ value: process.env.DOJIMA_NAME }, { value: process.env.DOJIMA_NAME }]))
+  await deployer.deploy(transformArtifact('TestToken', [{ value: `ERC20-${process.env.DOJIMA_NAME}` }, { value: `ERC20-${process.env.DOJIMA_NAME}` }]))
+  await deployer.deploy(transformArtifact('RootERC721', [{ value: `ERC721-${process.env.DOJIMA_NAME}` }, { value: `ERC721-${process.env.DOJIMA_NAME}` }]))
+  await deployer.deploy(transformArtifact('DojimaWeth'))
 
   await deployer.deploy(transformArtifact('StakeManager'))
   await deployer.deploy(transformArtifact('StakeManagerProxy', ['StakeManager']))

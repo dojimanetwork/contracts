@@ -40,7 +40,7 @@ contract('DepositManager @skip-on-coverage', async function(accounts) {
 
     it('deposit Matic Tokens', async function() {
       const bob = '0x' + crypto.randomBytes(20).toString('hex')
-      const e20 = await deployer.deployMaticToken()
+      const e20 = await deployer.deployDojimaToken()
       utils.assertBigNumberEquality(await e20.childToken.balanceOf(bob), 0)
       await utils.deposit(
         depositManager,

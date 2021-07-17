@@ -74,7 +74,7 @@ contract('ERC20PredicateBurnOnly @skip-on-coverage', async function(accounts) {
     })
 
     it('Exit with burnt Matic tokens', async function() {
-      const { rootERC20, childToken } = await deployer.deployMaticToken()
+      const { rootERC20, childToken } = await deployer.deployDojimaToken()
       childContracts.rootERC20 = rootERC20
       childContracts.childToken = childToken
       await utils.deposit(

@@ -122,7 +122,7 @@ contract('Drainable', async function(accounts) {
       function testEtherDrain() {
         before(freshDeploy)
         before(async function() {
-          this.maticWeth = await deployer.deployMaticWeth()
+          this.dojimaWeth = await deployer.deployDojimaWeth()
           await web3.eth.sendTransaction({
             from: accounts[0],
             to: this.depositManager.address,
@@ -133,7 +133,7 @@ contract('Drainable', async function(accounts) {
 
         describe('before drain', function() {
           it('depositManager must have correct balance', async function() {
-            utils.assertBigNumberEquality(await this.maticWeth.balanceOf(this.depositManager.address), this.amount)
+            utils.assertBigNumberEquality(await this.dojimaWeth.balanceOf(this.depositManager.address), this.amount)
           })
         })
   
@@ -148,7 +148,7 @@ contract('Drainable', async function(accounts) {
           })
   
           it('depositManager must have correct balance', async function() {
-            utils.assertBigNumberEquality(await this.maticWeth.balanceOf(this.depositManager.address), this.amount.sub(this.drainAmount))
+            utils.assertBigNumberEquality(await this.dojimaWeth.balanceOf(this.depositManager.address), this.amount.sub(this.drainAmount))
           })
   
           it('destination must have correct balance', async function() {

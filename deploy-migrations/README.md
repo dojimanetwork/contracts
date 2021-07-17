@@ -9,7 +9,7 @@
 | development  |          http://localhost:9545          |         \* |
 | bor          |          http://localhost:8545          |         \* |
 
-Feel free to add your own. Update the chain url in `networks.matic` key in [truffle-config.js](../truffle-config.js).
+Feel free to add your own. Update the chain url in `networks.matic`/`networks.dojima` key in [truffle-config.js](../truffle-config.js).
 
 ### :two: Export variables
 
@@ -21,14 +21,14 @@ export API_KEY=<Infura PROJECT ID>
 export MNEMONIC=<mnemonic>
 
 export HEIMDALL_ID=<>
-e.g. export HEIMDALL_ID="heimdall-P5rXwg"
+e.g. export HEIMDALL_ID="heimdall-1001"
 ```
 
 ### :three: Choose Bor Chain Id
 
 ```
-npm run template:process -- --bor-chain-id <bor-chain-id>
-for instance, npm run template:process -- --bor-chain-id 80001
+npm run template:process -- --bulldog-chain-id <bulldog-chain-id>
+for instance, npm run template:process -- --bulldog-chain-id 1001
 ```
 
 ### :four: Compile contracts

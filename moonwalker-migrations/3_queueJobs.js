@@ -6,8 +6,8 @@ async function deploy() {
   if (!process.env.HEIMDALL_ID) {
     throw new Error('Please export HEIMDALL_ID environment variable')
   }
-  if (!process.env.MATIC_NAME) {
-    throw new Error('Please export MATIC_NAME environment variable')
+  if (!process.env.DOJIMA_NAME) {
+    throw new Error('Please export DOJIMA_NAME environment variable')
   }
 
   const qClient = await EthDeployer.getQueue()
@@ -37,14 +37,14 @@ async function deploy() {
 
   await deployer.deploy(transformArtifact('ValidatorShareFactory'))
   await deployer.deploy(transformArtifact('StakingInfo', ['Registry']))
-  await deployer.deploy(transformArtifact('StakingNFT', [{ value: 'Matic Validator' }, { value: 'MV' }]))
+  await deployer.deploy(transformArtifact('StakingNFT', [{ value: 'Dojima Validator' }, { value: 'DV' }]))
 
   await deployer.deploy(transformArtifact('StakeManager'))
   await deployer.deploy(transformArtifact('StakeManagerProxy', ['StakeManager']))
   await deployer.deploy(transformArtifact('SlashingManager', ['Registry', 'StakingInfo', { value: process.env.HEIMDALL_ID }]))
   await deployer.deploy(transformArtifact('ValidatorShare', ['Registry', { value: '0' }, 'StakingNFT', 'StakeManagerProxy']))
 
-  // Add test MaticToken migration obj (old id=17) with id=21 manually in build/status.json file
+  // Add test DojimaToken migration obj (old id=17) with id=21 manually in build/status.json file
 }
 
 function transformArtifact(contract, args = []) {

@@ -3,11 +3,11 @@ pragma solidity ^0.5.11;
 import "./BaseERC20.sol";
 
 /**
- * @title Matic token contract
- * @notice This contract is an ECR20 like wrapper over native ether (matic token) transfers on the matic chain
- * @dev ERC20 methods have been made payable while keeping their method signature same as other ChildERC20s on Matic
+ * @title Dojima Token contract
+ * @notice This contract is an ECR20 like wrapper over native ether (Dojima Token) transfers on the dojima chain
+ * @dev ERC20 methods have been made payable while keeping their method signature same as other ChildERC20s on dojima
  */
-contract MRC20 is BaseERC20 {
+contract DRC20 is BaseERC20 {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     uint256 public currentSupply = 0;
@@ -66,11 +66,11 @@ contract MRC20 is BaseERC20 {
     }
 
     function name() public pure returns (string memory) {
-        return "Matic Token";
+        return "Dojima Token";
     }
 
     function symbol() public pure returns (string memory) {
-        return "MATIC";
+        return "DJM";
     }
 
     function decimals() public pure returns (uint8) {
@@ -98,12 +98,12 @@ contract MRC20 is BaseERC20 {
 
     /**
    * @dev _transfer is invoked by _transferFrom method that is inherited from BaseERC20.
-   * This enables us to transfer MaticEth between users while keeping the interface same as that of an ERC20 Token.
+   * This enables us to transfer dojimaEth between users while keeping the interface same as that of an ERC20 Token.
    */
     function _transfer(address sender, address recipient, uint256 amount)
         internal
     {
-        require(recipient != address(this), "can't send to MRC20");
+        require(recipient != address(this), "can't send to DRC20");
         address(uint160(recipient)).transfer(amount);
         emit Transfer(sender, recipient, amount);
     }

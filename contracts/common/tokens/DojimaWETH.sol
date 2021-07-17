@@ -3,7 +3,7 @@ pragma solidity ^0.5.2;
 import {WETH} from "./WETH.sol";
 
 
-contract MaticWETH is WETH {
+contract DojimaWeth is WETH {
     string public name = "Wrapped Ether";
     string public symbol = "WETH";
     uint8 public decimals = 18;

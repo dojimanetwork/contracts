@@ -39,7 +39,7 @@ contract ChildChain is Ownable, StateSyncerVerifier, StateReceiver {
     );
 
     constructor() public {
-        //Mapping matic Token
+        //Mapping Dojima Token
         tokens[0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0] = 0x0000000000000000000000000000000000001010;
     }
 

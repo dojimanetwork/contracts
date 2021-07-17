@@ -10,7 +10,7 @@ const TestToken = artifacts.require('TestToken')
 const DepositManager = artifacts.require('DepositManager')
 const Governance = artifacts.require('Governance')
 const WithdrawManager = artifacts.require('WithdrawManager')
-const MRC20 = artifacts.require('MRC20')
+const DRC20 = artifacts.require('DRC20')
 
 const toBN = web3.utils.toBN
 
@@ -29,10 +29,10 @@ async function stake() {
 
   const accounts = await web3.eth.getAccounts()
   const stakeManager = await getStakeManager()
-  const maticToken = await RootToken.at(contracts.root.tokens.MaticToken)
-  console.log({ stakeManager: stakeManager.address, maticToken: maticToken.address, stakeToken: await stakeManager.token() })
-  console.log('Sender accounts has a balanceOf', (await maticToken.balanceOf(accounts[0])).toString())
-  maticToken.approve(stakeManager.address, web3.utils.toWei('1000000'))
+  const dojimaToken = await RootToken.at(contracts.root.tokens.DojimaToken)
+  console.log({ stakeManager: stakeManager.address, dojimaToken: dojimaToken.address, stakeToken: await stakeManager.token() })
+  console.log('Sender accounts has a balanceOf', (await dojimaToken.balanceOf(accounts[0])).toString())
+  dojimaToken.approve(stakeManager.address, web3.utils.toWei('1000000'))
   await delay(5)
   console.log('sent approve tx, staking now...')
   // Remember to change the 4th parameter to false if delegation is not required
@@ -121,8 +121,8 @@ async function updateExitPeriod() {
 }
 
 async function child() {
-  const mrc20 = await MRC20.at('0x0000000000000000000000000000000000001010')
-  console.log(await mrc20.owner())
+  const DRC20 = await DRC20.at('0x0000000000000000000000000000000000001010')
+  console.log(await DRC20.owner())
 }
 
 async function updateImplementation() {

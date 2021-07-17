@@ -152,9 +152,9 @@ module.exports = async function(deployer, network, accounts) {
     await deployer.deploy(Governance)
     await deployer.deploy(Registry, Governance.address)
     await deployer.deploy(ValidatorShareFactory)
-    await deployer.deploy(TestToken, 'Matic Test', 'MATICTEST')
+    await deployer.deploy(TestToken, 'Dojima Test', 'DOJIMATEST')
     await deployer.deploy(StakingInfo, Registry.address)
-    await deployer.deploy(StakingNFT, 'Matic Validator', 'MV')
+    await deployer.deploy(StakingNFT, 'Dojima Validator', 'DV')
     await Promise.all([
       deployer.deploy(RootChain, Registry.address, 'heimdall-P5rXwg'),
 

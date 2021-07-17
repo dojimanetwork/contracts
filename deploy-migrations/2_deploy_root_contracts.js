@@ -41,7 +41,7 @@ const TransferWithSigPredicate = artifacts.require('TransferWithSigPredicate')
 const ExitNFT = artifacts.require('ExitNFT')
 
 // tokens
-const MaticWeth = artifacts.require('MaticWETH')
+const DojimaWeth = artifacts.require('DojimaWeth')
 const TestToken = artifacts.require('TestToken')
 const RootERC721 = artifacts.require('RootERC721')
 
@@ -147,11 +147,11 @@ module.exports = async function(deployer) {
 
     await deployer.deploy(ValidatorShareFactory)
     await deployer.deploy(StakingInfo, Registry.address)
-    await deployer.deploy(StakingNFT, 'Matic Validator', 'MV')
+    await deployer.deploy(StakingNFT, 'Dojima Validator', 'DV')
 
     console.log('deploying tokens...')
-    await deployer.deploy(MaticWeth)
-    await deployer.deploy(TestToken, 'MATIC', 'MATIC')
+    await deployer.deploy(DojimaWeth)
+    await deployer.deploy(TestToken, 'DOJIMA', 'DOJIMA')
     const testToken = await TestToken.new('Test ERC20', 'TST20')
     await deployer.deploy(RootERC721, 'Test ERC721', 'TST721')
 
@@ -233,8 +233,8 @@ module.exports = async function(deployer) {
           TransferWithSigPredicate: TransferWithSigPredicate.address
         },
         tokens: {
-          MaticWeth: MaticWeth.address,
-          MaticToken: TestToken.address,
+          DojimaWeth: DojimaWeth.address,
+          DojimaToken: TestToken.address,
           TestToken: testToken.address,
           RootERC721: RootERC721.address
         }

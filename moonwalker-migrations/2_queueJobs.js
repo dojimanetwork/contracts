@@ -118,7 +118,7 @@ async function deploy() {
           value:
             registry.contract.methods.updateContractMap(
               ethUtils.bufferToHex(ethUtils.keccak256('wethToken')),
-              getAddressForContract('MaticWETH')
+              getAddressForContract('DojimaWeth')
             ).encodeABI()
         },
       ],

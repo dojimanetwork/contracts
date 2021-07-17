@@ -5,13 +5,13 @@ const res = { root: { tokens: {} } }
 for (let i = 0; i < Object.keys(status).length; i++) {
   if (status[i].type !== 'deploy') continue
   if (status[i].contract === 'TestToken') {
-    if (status[i].args[0] === process.env.MATIC_NAME) {
-      res.root['tokens']['MaticToken'] = status[i].address
+    if (status[i].args[0] === process.env.DOJIMA_NAME) {
+      res.root['tokens']['DojimaToken'] = status[i].address
     } else {
       res.root['tokens']['TestToken'] = status[i].address
     }
-  } else if (status[i].contract === 'MaticWETH') {
-    res.root['tokens']['MaticWeth'] = status[i].address
+  } else if (status[i].contract === 'DojimaWeth') {
+    res.root['tokens']['DojimaWeth'] = status[i].address
   } else if (status[i].contract === 'RootERC721') {
     res.root['tokens'][status[i].contract] = status[i].address
   } else {

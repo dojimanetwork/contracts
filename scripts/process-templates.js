@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 program.version("0.0.1");
-program.option("-c, --bor-chain-id <bor-chain-id>", "Bor chain id", "15001");
+program.option("-c, --bulldog-chain-id <bulldog-chain-id>", "Bulldog chain id", "1001");
 program.parse(process.argv);
 
 //joining path of directory
@@ -20,14 +20,14 @@ glob(directoryPath, function (err, files) {
   //listing all files using forEach
   files.forEach(function (file) {
     // Do whatever you want to do with the file
-    const borChainIdHex = parseInt(program.borChainId, 10)
+    const bulldogChainIdHex = parseInt(program.bulldogChainId, 10)
       .toString(16)
       .toUpperCase();
 
     const data = {
-      borChainId: program.borChainId,
-      borChainIdHex:
-        borChainIdHex.length % 2 !== 0 ? `0${borChainIdHex}` : borChainIdHex,
+      bulldogChainId: program.bulldogChainId,
+      bulldogChainIdHex:
+        bulldogChainIdHex.length % 2 !== 0 ? `0${bulldogChainIdHex}` : bulldogChainIdHex,
     };
 
     const templateString = fs.readFileSync(file).toString();

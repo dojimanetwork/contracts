@@ -1,7 +1,7 @@
 {
-  "name": "matic-protocol",
-  "version": "0.3.2",
-  "description": "",
+  "name": "dojima-protocol",
+  "version": "0.0.1",
+  "description": "Dojima Contracts",
   "main": "index.js",
   "verify": {
     "contracts": "RootChain StakeManager"
@@ -23,21 +23,22 @@
     "lint": "npm run lint:sol && npm run lint:js",
     "lint:js": "eslint test/**/*.js",
     "lint:sol:fix": "solium -d contracts/ --fix",
+    "lint:sol:fix-dry-run": "solium -d contracts/ --fix-dry-run",
     "lint:sol": "solium -d contracts/"
   },
-  "pre-commit": [
-    "lint:sol"
-  ],
+  // "pre-commit": [
+  //   "lint:sol"
+  // ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/maticnetwork/contracts.git"
+    "url": "https://github.com/dojimanetwork/contracts.git"
   },
-  "author": "Jaynti Kanani <jdkanani@gmail.com>",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maticnetwork/contracts/issues"
+    "url": "https://github.com/dojimanetwork/contracts/issues"
   },
-  "homepage": "https://github.com/maticnetwork/contracts",
+  "homepage": "https://github.com/dojimanetwork/contracts",
   "config": {
     "mnemonics": "clock radar mass judge dismiss just intact mind resemble fringe diary casino"
   },

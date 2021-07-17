@@ -1,7 +1,7 @@
 pragma solidity ^0.5.11;
 
-import {MRC20} from "../child/MRC20.sol";
+import {DRC20} from "../child/DRC20.sol";
 
-contract TestMRC20 is MRC20 {
+contract TestDRC20 is DRC20 {
     function() external payable {}
 }

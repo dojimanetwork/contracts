@@ -466,8 +466,8 @@ contract ERC20Predicate is IErcPredicate {
         bytes32 eventSignature = bytes32(inputItems[0].toUint()); // inputItems[0] is the event signature
         data.rootToken = address(RLPReader.toUint(inputItems[1]));
 
-        // When child chain is started, since child matic is a genenis contract at 0x1010,
-        // the root token corresponding to matic is not known, hence child token address is emitted in LogFeeTransfer events.
+        // When child chain is started, since child dojima is a genenis contract at 0x1010,
+        // the root token corresponding to dojima is not known, hence child token address is emitted in LogFeeTransfer events.
         // Fix that anomaly here
         if (eventSignature == LOG_FEE_TRANSFER_EVENT_SIG) {
             data.rootToken = registry.childToRootToken(data.rootToken);

@@ -29,7 +29,7 @@ if (process.env.SOLIDITY_COVERAGE) {
 }
 
 export const ZeroAddress = '0x0000000000000000000000000000000000000000'
-export let ChildMaticTokenAddress = '0x0000000000000000000000000000000000001010'
+export let ChildDojimaTokenAddress = '0x0000000000000000000000000000000000001010'
 export const scalingFactor = web3.utils.toBN(10).pow(web3.utils.toBN(18))
 
 export function getSigs(wallets, votedata) {
@@ -156,7 +156,7 @@ export function buildSubmitHeaderBlockPaylod(
 
   let data = web3.eth.abi.encodeParameters(
     ['address', 'uint256', 'uint256', 'bytes32', 'bytes32', 'uint256'],
-    [proposer, start, end, root, options.rewardsRootHash, 15001]
+    [proposer, start, end, root, options.rewardsRootHash, 1001]
   )
   const sigData = Buffer.concat([ethUtils.toBuffer(options.sigPrefix || '0x01'), ethUtils.toBuffer(data)])
 

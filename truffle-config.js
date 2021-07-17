@@ -61,6 +61,19 @@ module.exports = {
       gasPrice: 10000000000, // 10 gwei
       skipDryRun: true
     },
+    kovan: {
+      provider: function() {
+        return new HDWalletProvider(
+          //private keys array
+          MNEMONIC,
+          //url to ethereum node
+          `https://kovan.infura.io/v3/1af283d87d0a49e18c1456f5348d3f9e`
+        )
+      },
+      gas: 5000000,
+      gasPrice: 25000000000,
+      network_id: 42
+    },
     mainnet: {
       provider: function() {
         return new HDWalletProvider(
@@ -98,7 +111,7 @@ module.exports = {
   },
   plugins: ['solidity-coverage', 'truffle-plugin-verify', 'truffle-contract-size'],
   verify: {
-    preamble: 'Matic network contracts'
+    preamble: 'Dojima network contracts'
   },
   api_keys: {
     etherscan: ETHERSCAN_API_KEY

@@ -4,7 +4,7 @@ const SafeMath = artifacts.require(
   'openzeppelin-solidity/contracts/math/SafeMath.sol'
 )
 const ChildChain = artifacts.require('ChildChain')
-const MRC20 = artifacts.require('MRC20')
+const DRC20 = artifacts.require('DRC20')
 
 module.exports = async function(deployer, network, accounts) {
   deployer.then(async() => {
@@ -15,10 +15,10 @@ module.exports = async function(deployer, network, accounts) {
     const childChain = await ChildChain.deployed()
     const contractAddresses = utils.getContractAddresses()
 
-    let MaticWeth = await childChain.addToken(
+    let DojimaWeth = await childChain.addToken(
       accounts[0],
-      contractAddresses.root.tokens.MaticWeth,
-      'ETH on Matic',
+      contractAddresses.root.tokens.DojimaWeth,
+      'ETH on Dojima',
       'ETH',
       18,
       false // _isERC721
@@ -42,19 +42,19 @@ module.exports = async function(deployer, network, accounts) {
       true // _isERC721
     )
 
-    const maticToken = await MRC20.at('0x0000000000000000000000000000000000001010')
-    const maticOwner = await maticToken.owner()
-    if (maticOwner === '0x0000000000000000000000000000000000000000') {
-      // matic contract at 0x1010 can only be initialized once, after the bor image starts to run
-      await maticToken.initialize(ChildChain.address, contractAddresses.root.tokens.MaticToken)
+    const dojimaToken = await DRC20.at('0x0000000000000000000000000000000000001010')
+    const dojimaOwner = await dojimaToken.owner()
+    if (dojimaOwner === '0x0000000000000000000000000000000000000000') {
+      // dojima contract at 0x1010 can only be initialized once, after the bor image starts to run
+      await dojimaToken.initialize(ChildChain.address, contractAddresses.root.tokens.DojimaToken)
     }
-    await childChain.mapToken(contractAddresses.root.tokens.MaticToken, '0x0000000000000000000000000000000000001010', false)
+    await childChain.mapToken(contractAddresses.root.tokens.DojimaToken, '0x0000000000000000000000000000000000001010', false)
 
     contractAddresses.child = {
       ChildChain: ChildChain.address,
       tokens: {
-        MaticWeth: MaticWeth.logs.find(log => log.event === 'NewToken').args.token,
-        MaticToken: '0x0000000000000000000000000000000000001010',
+        DojimaWeth: DojimaWeth.logs.find(log => log.event === 'NewToken').args.token,
+        DojimaToken: '0x0000000000000000000000000000000000001010',
         TestToken: TestToken.logs.find(log => log.event === 'NewToken').args.token,
         RootERC721: RootERC721.logs.find(log => log.event === 'NewToken').args.token
       }

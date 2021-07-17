@@ -17,7 +17,7 @@ const ERC20Predicate = artifacts.require('ERC20Predicate')
 const ERC721Predicate = artifacts.require('ERC721Predicate')
 const MarketplacePredicate = artifacts.require('MarketplacePredicate')
 const TransferWithSigPredicate = artifacts.require('TransferWithSigPredicate')
-const MaticWeth = artifacts.require('MaticWETH')
+const DojimaWeth = artifacts.require('DojimaWeth')
 const TestToken = artifacts.require('TestToken')
 
 module.exports = async function(deployer, network) {
@@ -35,7 +35,7 @@ module.exports = async function(deployer, network) {
         SlashingManager.deployed(),
         ValidatorShare.deployed(),
         StakingNFT.deployed(),
-        MaticWeth.deployed(),
+        DojimaWeth.deployed(),
         ERC20Predicate.deployed(),
         ERC721Predicate.deployed(),
         MarketplacePredicate.deployed(),
@@ -52,7 +52,7 @@ module.exports = async function(deployer, network) {
         slashingManager,
         validatorShare,
         stakingNFT,
-        maticWeth,
+        DojimaWeth,
         ERC20Predicate,
         ERC721Predicate,
         MarketplacePredicate,
@@ -105,7 +105,7 @@ module.exports = async function(deployer, network) {
           registry.address,
           registry.contract.methods.updateContractMap(
             ethUtils.bufferToHex(ethUtils.keccak256('wethToken')),
-            maticWeth.address
+            DojimaWeth.address
           ).encodeABI()
         )
 

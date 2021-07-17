@@ -12,14 +12,14 @@ docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 export MNEMONIC=
 export FROM=
 export API_KEY=
-export HEIMDALL_ID=heimdall-15001
-export MATIC_NAME=MATIC15001
-export BOR_ID=15001
+export HEIMDALL_ID=heimdall-1001
+export DOJIMA_NAME=MATIC1001
+export BOR_ID=1001
 ```
 
 3. Compile contracts
 ```
-npm run template:process -- --bor-chain-id $BOR_ID
+npm run template:process -- --bulldog-chain-id $BOR_ID
 npm run truffle:compile
 ```
 
