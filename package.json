@@ -26,9 +26,6 @@
     "lint:sol:fix-dry-run": "solium -d contracts/ --fix-dry-run",
     "lint:sol": "solium -d contracts/"
   },
-  // "pre-commit": [
-  //   "lint:sol"
-  // ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dojimanetwork/contracts.git"
