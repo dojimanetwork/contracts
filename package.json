@@ -1,6 +1,6 @@
 {
   "name": "dojima-protocol",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dojima Contracts",
   "main": "index.js",
   "verify": {
@@ -30,7 +30,6 @@
     "type": "git",
     "url": "https://github.com/dojimanetwork/contracts.git"
   },
-  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dojimanetwork/contracts/issues"
