@@ -13,6 +13,8 @@ test-blockchain/geth
 test-blockchain/history
 test-blockchain/data
 
+.secrets.json
+
 *.pid
 *.log
 

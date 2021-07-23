@@ -21,7 +21,7 @@ export API_KEY=<Infura PROJECT ID>
 export MNEMONIC=<mnemonic>
 
 export HEIMDALL_ID=<>
-e.g. export HEIMDALL_ID="heimdall-1001"
+e.g. export HEIMDALL_ID="watchman-1001"
 ```
 
 ### :three: Choose Bor Chain Id

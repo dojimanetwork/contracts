@@ -40,7 +40,7 @@ contract ChildChain is Ownable, StateSyncerVerifier, StateReceiver {
 
     constructor() public {
         //Mapping Dojima Token
-        tokens[0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0] = 0x0000000000000000000000000000000000001010;
+        tokens[0x4D76Af92248D3c510Ffb0475640BFA15917641D4] = 0x0000000000000000000000000000000000001010;
     }
 
     function onStateReceive(

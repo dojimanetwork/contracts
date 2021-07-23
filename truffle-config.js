@@ -7,6 +7,8 @@ chai.use(chaiAsPromised).should()
 
 var HDWalletProvider = require('truffle-hdwallet-provider')
 
+const fs = require("fs");
+const secrets = JSON.parse(fs.readFileSync(".secrets.json").toString().trim());
 const MNEMONIC =
   process.env.MNEMONIC ||
   'clock radar mass judge dismiss just intact mind resemble fringe diary casino'
@@ -62,16 +64,15 @@ module.exports = {
       skipDryRun: true
     },
     kovan: {
+      networkCheckTimeout: 10000,
       provider: function() {
         return new HDWalletProvider(
           //private keys array
-          MNEMONIC,
+          secrets.mnemonic,
           //url to ethereum node
-          `https://kovan.infura.io/v3/1af283d87d0a49e18c1456f5348d3f9e`
+          `https://kovan.infura.io/v3/${secrets.projectId}`
         )
       },
-      gas: 5000000,
-      gasPrice: 25000000000,
       network_id: 42
     },
     mainnet: {
@@ -89,14 +90,14 @@ module.exports = {
   compilers: {
     solc: {
       version: '0.5.17',
-      docker: true,
+      // docker: true,
       parser: 'solcjs',
       settings: {
         optimizer: {
           enabled: true,
           runs: 200
         },
-        evmVersion: 'constantinople'
+       //  evmVersion: 'constantinople'
       }
     }
   },

@@ -78,7 +78,7 @@ contract DRC20 is BaseERC20 {
     }
 
     function totalSupply() public view returns (uint256) {
-        return 10000000000 * 10**uint256(DECIMALS);
+        return 5000000000 * 10**uint256(DECIMALS);
     }
 
     function balanceOf(address account) public view returns (uint256) {
