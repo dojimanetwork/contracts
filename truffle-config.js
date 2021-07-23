@@ -8,7 +8,7 @@ chai.use(chaiAsPromised).should()
 var HDWalletProvider = require('truffle-hdwallet-provider')
 
 const fs = require("fs");
-const secrets = JSON.parse(fs.readFileSync(".secrets.json").toString().trim());
+//const secrets = JSON.parse(fs.readFileSync(".secrets.json").toString().trim());
 const MNEMONIC =
   process.env.MNEMONIC ||
   'clock radar mass judge dismiss just intact mind resemble fringe diary casino'
@@ -68,9 +68,10 @@ module.exports = {
       provider: function() {
         return new HDWalletProvider(
           //private keys array
-          secrets.mnemonic,
+          //secrets.mnemonic,
+          MNEMONIC
           //url to ethereum node
-          `https://kovan.infura.io/v3/${secrets.projectId}`
+          `https://kovan.infura.io/v3/${API_KEY}`
         )
       },
       network_id: 42
