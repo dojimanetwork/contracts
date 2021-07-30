@@ -17,11 +17,9 @@ $BOR --datadir $DIR/data \
   --rpcapi 'personal,db,eth,net,web3,txpool,miner,admin,bor' \
   --syncmode 'full' \
   --networkid '{{ bulldogChainId }}' \
-  --gasprice '0' \
-  --unlock '0x96C42C56fdb78294F96B0cFa33c92bed7D75F96a,0x9fb29aac15b9a4b7f17c3385939b007540f4d791' \
+  --unlock '0x01c1aC601CDFd1D0a11Faa3DcCcd78EFbD0669CC,0x265e016835494F05170E460Dad7a9380Bd3a1BFf' \
   --password $DIR/password.txt \
   --allow-insecure-unlock \
   --miner.gastarget '20000000' \
   --miner.gaslimit '20000000' \
-  --without-heimdall \
   --mine

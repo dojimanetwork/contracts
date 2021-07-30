@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-docker stop bor-test
-docker rm bor-test
+docker stop bulldog
+docker rm bulldog
