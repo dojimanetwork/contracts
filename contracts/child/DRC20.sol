@@ -5,7 +5,7 @@ import "./BaseERC20.sol";
 /**
  * @title Dojima Token contract
  * @notice This contract is an ECR20 like wrapper over native ether (Dojima Token) transfers on the dojima chain
- * @dev ERC20 methods have been made payable while keeping their method signature same as other ChildERC20s on dojima
+ * @dev ERC20 methods have been made payable while keeping their method signature same as other childDRC20 on dojima
  */
 contract DRC20 is BaseERC20 {
     event Transfer(address indexed from, address indexed to, uint256 value);
