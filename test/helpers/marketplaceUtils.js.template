@@ -81,7 +81,7 @@ function getTransferTypedData({
     domain: {
       name: "Matic Network",
       version: "1",
-      chainId: {{ bulldogChainId }},
+      chainId: {{ dojimaChainId }},
       verifyingContract: tokenAddress
     },
     primaryType: "TokenTransferOrder",

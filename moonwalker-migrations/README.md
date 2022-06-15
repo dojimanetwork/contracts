@@ -19,7 +19,7 @@ export BOR_ID=1001
 
 3. Compile contracts
 ```
-npm run template:process -- --bulldog-chain-id $BOR_ID
+npm run template:process -- --dojima-chain-id $BOR_ID
 npm run truffle:compile
 ```
 

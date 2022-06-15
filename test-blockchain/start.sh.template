@@ -16,7 +16,7 @@ $BOR --datadir $DIR/data \
      --ipcpath $DATA_DIR/bor.ipc \
      --http.api 'personal,db,eth,net,web3,txpool,miner,admin,bor' \
      --syncmode 'full' \
-     --networkid '{{ bulldogChainId }}' \
+     --networkid '{{ dojimaChainId }}' \
      --miner.gasprice '0' \
      --miner.gaslimit '20000000' \
      --miner.gastarget '20000000' \

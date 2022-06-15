@@ -1,6 +1,6 @@
 pragma solidity ^0.5.2;
 
 contract ChainIdMixin {
-  bytes constant public networkId = hex"{{ bulldogChainIdHex }}";
-  uint256 constant public CHAINID = {{ bulldogChainId }};
+  bytes constant public networkId = hex"{{ dojimaChainIdHex }}";
+  uint256 constant public CHAINID = {{ dojimaChainId }};
 }

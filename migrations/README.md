@@ -27,8 +27,8 @@ e.g. export HEIMDALL_ID="watchman-1001"
 ### :three: Choose Bor Chain Id
 
 ```
-npm run template:process -- --bulldog-chain-id <bulldog-chain-id>
-for instance, npm run template:process -- --bulldog-chain-id 1001
+npm run template:process -- --dojima-chain-id <dojima-chain-id>
+for instance, npm run template:process -- --dojima-chain-id 1001
 ```
 
 ### :four: Compile contracts
@@ -42,7 +42,7 @@ npm run truffle:compile
 We need to deploy our set of contracts on 2 chains:
 
 - Base Chain: Ideally a higher security EVM chain which can be used for dispute resolution. For testing ganache or any other EVM chain should work.
-- Child Chain: EVM compatible chain to work as our sidechain. For testing note that using `ganache` for child-chain is not recommended, instead invoking `npm run bulldog:simulate` would be better.
+- Child Chain: EVM compatible chain to work as our sidechain. For testing note that using `ganache` for child-chain is not recommended, instead invoking `npm run dojimachain:simulate` would be better.
 
 ```
 mv migrations dev-migrations && cp -r deploy-migrations migrations
